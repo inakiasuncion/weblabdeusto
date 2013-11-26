@@ -37,6 +37,7 @@ class DummyExperiment(Experiment.Experiment):
     @Override(Experiment.Experiment)
     def do_send_command_to_device(self, command):
         if self.verbose:
+
             print "Received command: %s" % command
 
         if command == 'server_info':

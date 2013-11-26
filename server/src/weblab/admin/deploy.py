@@ -365,6 +365,9 @@ def populate_weblab_tests(engine, tests):
     jsfpga = Model.DbExperiment("jsfpga", cat_fpga, start_date, end_date)
     session.add(jsfpga)
 
+    incubatorjs = Model.DbExperiment("incubatorjs", cat_farm, start_date, end_date)
+    session.add(incubatorjs)
+
     logic = Model.DbExperiment("ud-logic", cat_pic, start_date, end_date)
     session.add(logic)
 
@@ -677,7 +680,22 @@ def populate_weblab_tests(engine, tests):
     session.add(up_any_jsfpga_allowed_p2)
     up_any_jsfpga_allowed_p3 = Model.DbUserPermissionParameter(up_any_jsfpga_allowed, experiment_allowed_p3, "1400")
     session.add(up_any_jsfpga_allowed_p3)   
-    
+
+    up_any_incubatorjs_allowed = Model.DbUserPermission(
+        any,
+        experiment_allowed,
+        "any::incubatorjs",
+        datetime.datetime.utcnow(),
+        "Permission for any to use incubatorjs"
+    )
+    session.add(up_any_incubatorjs_allowed)
+    up_any_incubatorjs_allowed_p1 = Model.DbUserPermissionParameter(up_any_incubatorjs_allowed, experiment_allowed_p1, "incubatorjs")
+    session.add(up_any_incubatorjs_allowed_p1)
+    up_any_incubatorjs_allowed_p2 = Model.DbUserPermissionParameter(up_any_incubatorjs_allowed, experiment_allowed_p2, "Farm experiments")
+    session.add(up_any_incubatorjs_allowed_p2)
+    up_any_incubatorjs_allowed_p3 = Model.DbUserPermissionParameter(up_any_incubatorjs_allowed, experiment_allowed_p3, "3600")
+    session.add(up_any_incubatorjs_allowed_p3)
+
     
     up_any_fpga_allowed = Model.DbUserPermission(
         any,

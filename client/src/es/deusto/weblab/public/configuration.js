@@ -84,6 +84,15 @@
 	                    		   "height"					: 600,
 	                    		   "provide.file.upload"	: true,
 	                    		   "html.file"				: "jsxilinx/jsxilinx.html"
+	                    	   },
+				   {
+	                    		   "experiment.name"		: "incubatorjs",
+	                    		   "experiment.category"	: "Farm experiments",
+	                    		   "experiment.picture"		:F "/img/experiments/incubator.jpg",
+	                    		   "width"					: 800,
+	                    		   "height"					: 600,
+	                    		   "provide.file.upload"	: false,
+	                    		   "html.file"				: "incubator/incubator.html"
 	                    	   }
 	                       ],
 	                "vm"    : [

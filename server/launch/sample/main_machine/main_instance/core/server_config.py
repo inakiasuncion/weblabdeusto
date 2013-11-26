@@ -73,6 +73,7 @@ core_coordinator_laboratory_servers = {
             "exp1|binary|Games"                      : "binary@binary",
             "exp1|control-app|Control experiments"   : "control@control",
             "exp1|incubator|Farm experiments"        : "incubator@incubator",
+            "exp1|incubatorjs|Farm experiments"      : "incubatorjs@incubator",
             "exp1|http|HTTP experiments"             : "http1@http",
         }
 }
@@ -123,6 +124,7 @@ core_scheduling_systems = {
         "unr"         : ("PRIORITY_QUEUE", {}),
         "control"     : ("PRIORITY_QUEUE", {}),
         "incubator"   : ("PRIORITY_QUEUE", {}),
+        "incubatorjs" : ("PRIORITY_QUEUE", {}),
         "robot-maze"  : ("PRIORITY_QUEUE", {}),
         "http"  : ("PRIORITY_QUEUE", {}),
     }

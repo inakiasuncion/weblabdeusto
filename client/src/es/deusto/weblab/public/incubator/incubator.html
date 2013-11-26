@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ES">
+	<head>
+		<title>Incubator Test</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+
+		<script src="../jslib/weblabjs.js"></script>
+
+        <script src="../jslib/three.min.js"></script>
+		<script src="../jslib/stats.min.js"></script>
+		<script src="../jslib/THREEx.FullScreen.js"></script>
+
+        <script src="../jslib/jquery-1.9.1.js"></script>
+        <script src="../jslib/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.js"></script>
+
+        <script src="../jslib/detector.js"></script>
+       
+       <script src="libs/Widgets.js"></script>
+
+        <link rel="stylesheet" href="../jslib/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css" /> 
+        <!-- Just for the progress bar. TODO: Localize -->
+        <link rel="stylesheet" href="blueprint/src/grid.css" />
+        <link rel="stylesheet" href="blueprint/src/typography.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="../jslib/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css" /> <!-- Just for the progress bar. TODO: Localize -->
+
+
+    </head>
+	<body>
+    <script type="text/javascript">
+
+
+		    Weblab.setOnTimeCallback(function (time) {
+		        console.log("[DBG]: Time left: " + time);
+
+		    });
+
+		    Weblab.setOnStartInteractionCallback(function () {
+		        console.log("[DBG]: On start interaction");
+                light_page();
+		    });
+
+            $(document).ready(function(){
+                rc = new RefreshingCameraWidget("video", "https://www.weblab.deusto.es/webcam/proxied.py/fpga1");
+                rc.startRefreshing();
+                dim_page();
+
+            });
+
+
+
+
+
+
+
+	</script>
+
+
+        <div class="container">
+            <div class="span-20 last">
+                <div id="progressbar" class="progress-bar"><div class="progress-label">Loading...</div></div>
+            </div>
+            <div class="span-14" id="webcamimg">
+                <H1> Web CAM</H1>
+                <img id="video" height="400px" src="https://www.weblab.deusto.es/webcam/proxied.py/fpga1"/>
+            </div>
+
+            <div class="span-6 last" id="lateralpanel">
+                <h2>Lateral Panel</h2>
+                <div class="span-6 last" id="remain">
+                    <H3>Remaining Time</H3>
+                    <div class="counter"></div>
+                </div>
+                <div class="span-6 last" id="lectures">
+                    <H3>Temperature/Humidity Lectures</H3>
+                </div>
+            </div>
+
+            <div class="span-10" id="light">
+                <H2>Light ON/OFF</H2>
+                <div class="switch"></div>
+            </div>
+            <div class="span-10 last" id="graphic">
+                <h2>Graphic Measures</h2>
+
+            </div>
+
+        </div>
+
+	</body>
+</html>
